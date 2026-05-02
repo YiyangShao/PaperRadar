@@ -1,0 +1,56 @@
+# --- Data (never commit raw or processed datasets) ---
+data/raw/
+data/processed/
+data/eval/
+*.parquet
+*.arrow
+*.pkl
+
+# --- Secrets ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# --- Node / Next.js ---
+node_modules/
+.next/
+out/
+.vercel
+.turbo/
+*.tsbuildinfo
+.DS_Store
+
+# --- Notebooks ---
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Misc ---
+.cache/
+tmp/
