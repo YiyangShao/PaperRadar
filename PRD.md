@@ -46,11 +46,13 @@ P2 is **not** a user we design for, but the project must look credible to them.
 
 ### MVP IN (W1–W8)
 
-**Data**
+**Data** (ingested W1-D2, see `docs/data-sources.md` for breakdown)
 - ICLR 2023, 2024, 2025
 - NeurIPS 2024
-- ~12K papers, ~50K reviews (estimated)
+- **27,104 papers, 105,755 official reviews** (verified 2026-05-03)
 - All English, all from OpenReview public API
+- Note: ICLR 2023 uses API v1 with a different review schema; v1↔v2
+  normalization is a W2 task
 
 **Core user-facing features**
 1. Paste an abstract OR upload a PDF → get top-10 most similar prior submissions
