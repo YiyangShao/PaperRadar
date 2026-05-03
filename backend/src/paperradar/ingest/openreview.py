@@ -81,12 +81,17 @@ def get_title(content: dict[str, Any] | None) -> str:
 
 
 def reply_kind(reply: dict[str, Any]) -> str:
-    """Classify a reply by its invitation suffix."""
+    """Classify a reply by its invitation suffix.
+
+    v2 reply has 'invitations' (list); v1 has 'invitation' (string).
+    v2 paper-level invitations look like  .../Submission1647/-/Official_Review
+    v1 paper-level invitations look like  .../Paper3283/-/Official_Review
+    """
     invitations = reply.get("invitations") or [reply.get("invitation")]
     for inv in invitations:
-        if not inv or "/Submission" not in inv:
+        if not inv or "/-/" not in inv:
             continue
-        suffix = inv.rsplit("/-/", 1)[-1] if "/-/" in inv else inv
+        suffix = inv.rsplit("/-/", 1)[-1]
         if suffix in {"Official_Review", "Official_Comment", "Meta_Review", "Decision"}:
             return suffix
     return "?"
